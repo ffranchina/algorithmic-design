@@ -28,6 +28,47 @@ int pop(NodeList **root) {
     return value;
 }
 
+NodeList *add(NodeList **root, int value) {
+    NodeList *tmp;
+    NodeList *new_node = malloc(sizeof(NodeList));
+    new_node->value = value; 
+    new_node->next = NULL;
+
+    if (!(*root))
+        *root = new_node;
+    else {
+        tmp = *root;
+        while (tmp->next)
+            tmp = tmp->next;
+        tmp->next = new_node;
+    }
+
+    return new_node;
+}
+
+int del(NodeList **root, int value) {
+    if (!(*root)) return -1;
+
+    NodeList *prev = NULL;
+    NodeList *tmp = *root;
+
+    while (tmp->value != value && tmp->next) {
+        prev = tmp;
+        tmp = tmp->next;
+    }
+
+    if (tmp->value == value) {
+        if (*root == tmp)
+            *root = tmp->next;
+        else
+            prev->next = tmp->next;
+
+        free(tmp);
+        return 1;
+    } else
+        return -2;
+}
+
 int is_in(NodeList *root, int value) {
     NodeList *tmp = root;
     

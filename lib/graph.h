@@ -27,6 +27,15 @@ int fill(Graph *g, double *values, int len) {
     return i; // returns the number of inserted nodes
 }
 
+int connect_w(Graph *g, int pos_a, int pos_b, int weight) {
+    if (pos_a > g->size || pos_b > g->size || weight < 1)
+        return 1;
+
+    g->adjacency_matrix[pos_a * g->size + pos_b] = weight;
+
+    return 0;
+}
+
 int connect(Graph *g, int pos_a, int pos_b) {
     if (pos_a > g->size || pos_b > g->size)
         return 1;
