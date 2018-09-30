@@ -11,7 +11,10 @@ ex2:
 ex3:
 	$(CC) 03-strassen.c -I $(INCLUDES) -o strassen
 
-all: ex1 ex2 ex3
+ex4:
+	$(CC) 04-tarjan.c -I $(INCLUDES) -o tarjan
+
+all: ex1 ex2 ex3 ex4
 
 clean:
 	find . -type f -executable -exec rm '{}' \;
