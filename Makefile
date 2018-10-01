@@ -14,7 +14,10 @@ ex3:
 ex4:
 	$(CC) 04-tarjan.c -I $(INCLUDES) -o tarjan
 
-all: ex1 ex2 ex3 ex4
+ex5:
+	$(CC) 05-dijkstra.c -I $(INCLUDES) -o dijkstra
+
+all: ex1 ex2 ex3 ex4 ex5
 
 clean:
 	find . -type f -executable -exec rm '{}' \;
