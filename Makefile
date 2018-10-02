@@ -17,7 +17,10 @@ ex4:
 ex5:
 	$(CC) 05-dijkstra.c -I $(INCLUDES) -o dijkstra
 
-all: ex1 ex2 ex3 ex4 ex5
+ex6:
+	$(CC) 06-heapsort.c -I $(INCLUDES) -o heapsort
+
+all: ex1 ex2 ex3 ex4 ex5 ex6
 
 clean:
 	find . -type f -executable -exec rm '{}' \;
