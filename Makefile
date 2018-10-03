@@ -20,7 +20,10 @@ ex5:
 ex6:
 	$(CC) 06-heapsort.c -I $(INCLUDES) -o heapsort
 
-all: ex1 ex2 ex3 ex4 ex5 ex6
+ex7:
+	$(CC) 07-floyd_warshall.c -I $(INCLUDES) -o floyd_warshall 
+
+all: ex1 ex2 ex3 ex4 ex5 ex6 ex7
 
 clean:
 	find . -type f -executable -exec rm '{}' \;
